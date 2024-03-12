@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import "./MealsLists.css";
 
@@ -11,7 +12,11 @@ const Meal = ({ meal }) => {
       <div className="meal-card">
         <h3>{meal.title}</h3>
         <p>{meal.description}</p>
-        <p>Price: ${formattedPrice.toFixed(2)}</p>
+        {formattedPrice ? (
+          <p>Price: ${formattedPrice.toFixed(2)}</p>
+        ) : (
+          <p>No Price</p>
+        )}
       </div>
     </Link>
   );
